@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather — ESP32 DHT22</title>
+    <meta name="description" content="Current temperature and humidity from a DHT22 sensor on an ESP32." />
+    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1220" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-state="loading">
+    <main class="card">
+      <header class="head">
+        <div>
+          <h1>Weather</h1>
+          <p class="sub">Live from the DHT22 on the ESP32</p>
+        </div>
+        <button id="refresh" class="refresh" type="button" title="Refresh now">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20 11a8 8 0 1 0-2.3 5.7" />
+            <path d="M20 4v7h-7" />
+          </svg>
+          <span>Refresh</span>
+        </button>
+      </header>
+
+      <div class="readings">
+        <section class="reading" aria-labelledby="temp-label">
+          <p class="label" id="temp-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0Z" />
+              <path d="M12 9v6" />
+            </svg>
+            Temperature
+          </p>
+          <p class="value">
+            <span id="temperature">—</span><span class="unit">°C</span>
+          </p>
+          <p class="detail" id="temperature-detail">&nbsp;</p>
+        </section>
+
+        <section class="reading" aria-labelledby="humidity-label">
+          <p class="label" id="humidity-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3s6 6.4 6 10.5a6 6 0 0 1-12 0C6 9.4 12 3 12 3Z" />
+            </svg>
+            Humidity
+          </p>
+          <p class="value">
+            <span id="humidity">—</span><span class="unit">%</span>
+          </p>
+          <p class="detail" id="humidity-detail">&nbsp;</p>
+        </section>
+      </div>
+
+      <footer class="foot">
+        <p class="status" role="status" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="status">Connecting…</span>
+        </p>
+        <p class="updated" id="updated"></p>
+      </footer>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

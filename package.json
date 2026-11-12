@@ -1,0 +1,9 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Current temperature and humidity from an ESP32 DHT22, served on Vercel.",
+  "engines": {
+    "node": ">=20"
+  }
+}
